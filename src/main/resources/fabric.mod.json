@@ -1,41 +1,30 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "oldnametags",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Old Name Tags",
+	"description": "Reverts the 1.21.2 changes to name tag rendering.",
 	"authors": [
-		"Me!"
+		"MrKinau"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/MrKinau/OldNameTags",
+		"repo": "https://github.com/MrKinau/OldNameTags"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
-	"environment": "*",
+	"icon": "assets/oldnametags/icon.png",
+	"environment": "client",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
-		],
-		"client": [
-			"com.example.ExampleModClient"
+			"dev.kinau.oldnametags.OldNameTagsMod"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
-		{
-			"config": "modid.client.mixins.json",
-			"environment": "client"
-		}
+		"oldnametags.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.7",
-		"minecraft": "~1.21.3",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
+		"minecraft": ">=1.21.2",
+		"java": ">=21"
 	}
 }

@@ -1,11 +1,12 @@
 {
 	"required": true,
-	"package": "com.example.mixin.client",
+	"package": "dev.kinau.oldnametags.mixin",
 	"compatibilityLevel": "JAVA_21",
-	"client": [
-		"ExampleClientMixin"
-	],
+	"mixins": [],
 	"injectors": {
 		"defaultRequire": 1
-	}
+	},
+	"client": [
+		"FontMixin"
+	]
 }
