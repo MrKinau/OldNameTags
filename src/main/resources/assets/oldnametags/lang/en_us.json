@@ -1,0 +1,5 @@
+{
+  "key.oldnametags.toggle": "Toggle Old Name Tags",
+  "text.oldnametags.toggled.on": "Old Name Tags enabled (Name Tag Rendering < 1.21.2)",
+  "text.oldnametags.toggled.off": "Old Name Tags disabled (Name Tag Rendering 1.21.2+)"
+}
