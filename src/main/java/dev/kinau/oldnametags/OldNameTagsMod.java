@@ -33,8 +33,8 @@ public class OldNameTagsMod implements ModInitializer {
         try {
 			File configFile = getConfigFile();
 			if (configFile.exists())
-            	config = GSON.fromJson(new FileReader("oldnametags.json"), OldNameTagsConfig.class);
-			else {
+            	config = GSON.fromJson(new FileReader(configFile), OldNameTagsConfig.class);
+			if (config == null) {
 				config = new OldNameTagsConfig();
 				saveConfig();
 			}
