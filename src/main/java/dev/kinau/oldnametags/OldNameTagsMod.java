@@ -42,7 +42,7 @@ public class OldNameTagsMod implements ModInitializer {
             LOGGER.error("Failed to load oldnametags config", ex);
         }
 
-        KeyMapping toggleKeyMapping = new KeyMapping("key.oldnametags.toggle", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_O, KeyMapping.CATEGORY_MISC);
+        KeyMapping toggleKeyMapping = new KeyMapping("key.oldnametags.toggle", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_O, KeyMapping.Category.MISC);
 		KeyBindingHelper.registerKeyBinding(toggleKeyMapping);
 
 		ClientTickEvents.END_CLIENT_TICK.register(e -> {
