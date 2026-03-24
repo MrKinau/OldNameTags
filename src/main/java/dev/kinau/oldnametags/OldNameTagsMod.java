@@ -6,7 +6,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import dev.kinau.oldnametags.config.OldNameTagsConfig;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
@@ -43,7 +43,7 @@ public class OldNameTagsMod implements ModInitializer {
         }
 
         KeyMapping toggleKeyMapping = new KeyMapping("key.oldnametags.toggle", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_O, KeyMapping.Category.MISC);
-		KeyBindingHelper.registerKeyBinding(toggleKeyMapping);
+		KeyMappingHelper.registerKeyMapping(toggleKeyMapping);
 
 		ClientTickEvents.END_CLIENT_TICK.register(e -> {
 			while (toggleKeyMapping.consumeClick()) {
