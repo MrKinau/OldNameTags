@@ -42,14 +42,14 @@ public class OldNameTagsMod implements ModInitializer {
             LOGGER.error("Failed to load oldnametags config", ex);
         }
 
-        KeyMapping toggleKeyMapping = new KeyMapping("key.oldnametags.toggle", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_O, KeyMapping.Category.MISC);
+        KeyMapping toggleKeyMapping = new KeyMapping("key.oldnametags.toggle", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_M, KeyMapping.Category.MISC);
 		KeyMappingHelper.registerKeyMapping(toggleKeyMapping);
 
 		ClientTickEvents.END_CLIENT_TICK.register(e -> {
 			while (toggleKeyMapping.consumeClick()) {
 				config.setEnabled(!config.isEnabled());
 				saveConfig();
-				Minecraft.getInstance().gui.setOverlayMessage(config.isEnabled() ?
+				Minecraft.getInstance().gui.hud.setOverlayMessage(config.isEnabled() ?
 								Component.translatable("text.oldnametags.toggled.on").withColor(CommonColors.GREEN) :
 								Component.translatable("text.oldnametags.toggled.off").withColor(CommonColors.SOFT_RED),
 						false);
