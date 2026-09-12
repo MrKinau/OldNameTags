@@ -12,7 +12,6 @@ import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.CommonColors;
-import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,7 +41,7 @@ public class OldNameTagsMod implements ModInitializer {
             LOGGER.error("Failed to load oldnametags config", ex);
         }
 
-        KeyMapping toggleKeyMapping = new KeyMapping("key.oldnametags.toggle", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_M, KeyMapping.Category.MISC);
+        KeyMapping toggleKeyMapping = new KeyMapping("key.oldnametags.toggle", InputConstants.Type.KEYBOARD, InputConstants.KEY_M, KeyMapping.Category.MISC);
 		KeyMappingHelper.registerKeyMapping(toggleKeyMapping);
 
 		ClientTickEvents.END_CLIENT_TICK.register(e -> {
